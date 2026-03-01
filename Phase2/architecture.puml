@@ -1,0 +1,29 @@
+@startuml
+package "main" {
+  class Bootstrap
+}
+package core {
+  interface DataSink
+  interface PipelineService
+  class TransformationEngine
+}
+package plugins {
+  class CSVReader
+  class JSONReader
+  class ConsoleWriter
+  class ChartWriter
+}
+
+Bootstrap --> TransformationEngine : instantiates
+Bootstrap --> CSVReader : instantiates
+Bootstrap --> JSONReader
+Bootstrap --> ConsoleWriter
+Bootstrap --> ChartWriter
+
+TransformationEngine ..|> DataSink
+CSVReader ..|> PipelineService
+JSONReader ..|> PipelineService
+
+CSVReader --> TransformationEngine : calls execute()
+TransformationEngine --> DataSink : calls write()
+@enduml
