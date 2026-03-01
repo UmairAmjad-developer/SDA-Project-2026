@@ -1,0 +1,10 @@
+{
+  "input": "csv",
+  "output": ["console", "chart"],
+  "path": "data/gdp_dataset_fixed.csv",
+  "region": "Asia",
+  "year": 2020,
+  "start_year": 2010,
+  "end_year": 2024,
+  "decline_years": 3
+}
