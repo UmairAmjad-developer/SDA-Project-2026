@@ -1,7 +1,6 @@
 from multiprocessing import Queue
 from queue import Empty
 from typing import Dict
-
 from .functional import verify_signature
 
 
